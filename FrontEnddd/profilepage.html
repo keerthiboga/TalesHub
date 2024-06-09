@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tale-Hub Profile</title>
+    <link rel="stylesheet" href="css/Profilepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="profile">
+        <div class="profilepic">
+            <img src="images/profPics/boy.png" id="userPhoto" class="profile-photo">
+            <h2 id="username">Vigneshwar</h2>
+            <p><i class="fa-solid fa-magnifying-glass"></i><span id="bio1">Crafting suspenseful worlds</span></p>
+            <p><i class="fa-solid fa-book"></i><span id="bio2">Best selling thriller author</span></p>
+            <p><i class="fa-solid fa-pen-nib"></i><span id="bio3">Unraveling mysteries, one word at a time</span></p>
+            <button onclick="window.location.href='edit.html'" class="edit-btn">Edit</button>
+        </div>
+        <div class="profileinfo">
+            <div class="stories">
+                <p>20</p>
+                <p>stories</p>
+            </div>
+            <div class="readers">
+                <p>200</p>
+                <p>Readers</p>
+            </div>
+            <div class="writers">
+                <p>19</p>
+                <p>writers</p>
+            </div>
+        </div>
+    </div>
+    <div class="storyCollection">
+        <h2>Stories</h2>
+        <div class="storyPoster">
+            <a href="storypage.html"><img src="Poster6.jpeg" class="poster"></a>
+            <a href="storypage.html"><img src="horror.jpeg" class="poster"></a>
+            <a href="storypage.html"><img src="poster3.jpeg" class="poster"></a>
+            <a href="storypage.html"><img src="thriller.jpeg" class="poster"></a>
+            <a href="storypage.html"><img src="poster5.jpeg" class="poster"></a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePhoto = localStorage.getItem('profilePhoto');
+            const username = localStorage.getItem('username');
+            const bio1 = localStorage.getItem('bio1');
+            const bio2 = localStorage.getItem('bio2');
+            const bio3 = localStorage.getItem('bio3');
+
+            if (profilePhoto) {
+                document.getElementById('userPhoto').src = profilePhoto;
+            }
+            if (username) {
+                document.getElementById('username').textContent = username;
+            }
+            if (bio1) {
+                document.getElementById('bio1').textContent = bio1;
+            }
+            if (bio2) {
+                document.getElementById('bio2').textContent = bio2;
+            }
+            if (bio3) {
+                document.getElementById('bio3').textContent = bio3;
+            }
+        });
+    </script>
+</body>
+</html>

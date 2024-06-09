@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writers Room</title>
+    <link rel="stylesheet" href="css/writers_room.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <button id="saveBtn" class="save-btn"><i class="fa-solid fa-save"></i> Save</button>
+        <button id="grammarCheckBtn" class="grammar-check-btn"><i class="fa-solid fa-spell-check"></i> Grammar</button>
+        <button id="generateContentBtn" class="generate-content-btn"><i class="fa-solid fa-lightbulb"></i> Generate Content</button>
+        <input type="file" id="uploadImage" class="upload-image" accept="image/*" style="display: none;">
+        <button id="uploadBtn" class="upload-btn"><i class="fa-solid fa-upload"></i> Upload Image</button>
+    </header>
+    <div class="content">
+        <input type="text" id="storyTitle" class="story-title" placeholder="Title of your story">
+        <div id="storyContent" class="story-content" contenteditable="true" placeholder="Start writing your story here..."></div>
+    </div>
+
+    <script src="scripts/writers_room.js"></script>
+</body>
+</html>

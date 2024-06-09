@@ -1,0 +1,7 @@
+.env
+.venv
+Helper.txt
+css
+images
+scripts
+models.py

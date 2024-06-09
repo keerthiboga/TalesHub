@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Tale Hub</title>
+    <link rel="stylesheet" href="css/Profilepage.css">
+    <style>
+        .profile-photo {
+            height: 4cm;
+            width: auto;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+        }
+        .container form {
+            text-align: center;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .logo img {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="images/Assets/Tale.png" alt="Tale Hub Logo">
+    </div>
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <form id="editProfileForm">
+            <label for="profilePhoto">Profile Photo:</label>
+            <img src="images/profPics/boy.png" id="currentProfilePhoto" class="profile-photo" alt="Current Profile Photo">
+            <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" style="display:none;">
+
+            <label for="usernameInput">Username:</label>
+            <input type="text" id="usernameInput" name="usernameInput" required>
+
+            <label for="bioInput">Bio:</label>
+            <textarea id="bioInput" name="bioInput" rows="3" required></textarea>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePhoto = localStorage.getItem('profilePhoto');
+            const username = localStorage.getItem('username');
+            const bio1 = localStorage.getItem('bio1');
+            const bio2 = localStorage.getItem('bio2');
+            const bio3 = localStorage.getItem('bio3');
+
+            if (profilePhoto) {
+                document.getElementById('currentProfilePhoto').src = profilePhoto;
+            }
+            if (username) {
+                document.getElementById('usernameInput').value = username;
+            }
+            if (bio1 || bio2 || bio3) {
+                document.getElementById('bioInput').value = `${bio1}\n${bio2}\n${bio3}`.trim();
+            }
+
+            const currentProfilePhoto = document.getElementById('currentProfilePhoto');
+            const profilePhotoInput = document.getElementById('profilePhoto');
+
+            currentProfilePhoto.addEventListener('click', function() {
+                profilePhotoInput.click();
+            });
+
+            profilePhotoInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        currentProfilePhoto.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+
+        document.getElementById('editProfileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const newProfilePhoto = document.getElementById('profilePhoto').files[0];
+            const newUsername = document.getElementById('usernameInput').value;
+            const newBio = document.getElementById('bioInput').value.split('\n');
+
+            if (newProfilePhoto) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem('profilePhoto', e.target.result);
+                    saveAndRedirect();
+                };
+                reader.readAsDataURL(newProfilePhoto);
+            } else {
+                saveAndRedirect();
+            }
+
+            function saveAndRedirect() {
+                localStorage.setItem('username', newUsername);
+                localStorage.setItem('bio1', newBio[0]);
+                localStorage.setItem('bio2', newBio[1]);
+                localStorage.setItem('bio3', newBio[2]);
+                window.location.href = 'profilepage.html';
+            }
+        });
+    </script>
+</body>
+</html>
