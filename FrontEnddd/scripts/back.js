@@ -5,7 +5,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA29lSW9zkkiqKCjjdG1gQn6YeVOeAINiM",
+    apiKey: Your_API,
     authDomain: "login-data-db8f1.firebaseapp.com",
     projectId: "login-data-db8f1",
     storageBucket: "login-data-db8f1.appspot.com",
