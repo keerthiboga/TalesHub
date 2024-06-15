@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    emailjs.init("8HH-dDlSaTcIefnaI");
+    emailjs.init(Your_Initialization);
 
     const feedbackForm = document.getElementById("feedbackForm");
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const message = document.getElementById("message").value;
 
         const templateParams = {
-            to_email: "sametithirumanivigneshwar@gmail.com",
+            to_email: "Your_name",
             from_email: email,
             message: message
         };
