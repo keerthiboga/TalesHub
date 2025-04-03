@@ -17,3 +17,9 @@
     * JavaScript: For interactive elements and dynamic functionality.
 * **Backend:**
     * Python: For server-side logic, data processing, and API development.
+## Demo Videos
+
+See TaleHub in action!
+
+* **Code Walkthrough Demo:** [CODE](https://youtu.be/QGpFAfUtiHc?si=oiMd8c84dpRRW2n0) (Shows the code and architecture)
+* **Output and Functionality Demo:** [OUTPUT](https://youtu.be/TLyHlaoK0vc?si=Cagvr3T5f3tGKnev) (Shows the user interface and features in action)
