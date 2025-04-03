@@ -1,5 +1,5 @@
 # 🌟✍️ Unleash Your Inner Storyteller with TaleHub! 📚✨
- - Connecting Wordsmiths and Avid Readers.
+ * Connecting Wordsmiths and Avid Readers.
 
 **TaleHub** is a platform designed to connect writers and readers, fostering a vibrant community where stories come to life. Writers can easily upload their work and leverage powerful tools to enhance their writing process, while readers can discover and enjoy diverse narratives.
 
